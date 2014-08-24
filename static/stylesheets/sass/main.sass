@@ -1,3 +1,9 @@
+/* Basic Setup */
+
+*
+	margin: 0
+	padding: 0
+
 /* Mixin Setup */
 
 @mixin borderRadius($br)
@@ -15,15 +21,15 @@
 /* Font Setup */
 
 @font-face
-	font-family: source-sans-pro
-	src: url('//use.edgefonts.net/source-sans-pro.js')
+	font-family: open-sans
+	src: url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700')
 
 body, html
-	font-family: source-sans-pro, sans-serif
+	font-family: open-sans, sans-serif 
 	h1
-		font-weight: lighter
+		font-weight: 300
 	article, p
-		font-weight: lighter
+		font-weight: 300
 
 /* End Font Setup */
 
@@ -46,10 +52,12 @@ $bgColor: #F1EDE2
 		clear: both
 
 /* Optional Grid Padding */
+
 .grid-pad
 	padding: $padding 0 $padding $padding
 	[class*='col-']:last-of-type
 		padding-right: $padding
+
 /* End Optional Grid Padding */	
 
 [class*='col-']
@@ -73,7 +81,54 @@ $bgColor: #F1EDE2
 .col-2-3
 	width: 66.66%
 
+.innerCol
+	min-height: 370px
+	max-width: 300px
+	padding: 10px
+
 /* End Grid Setup */
+
+/* End Basic Setup */
+
+/* Parallax Scrolling Tools (Thanks to http://blog.keithclark.co.uk/pure-css-parallax-websites/ for the tips!) */
+
+$perspective: 1px
+$scrollSpeedBase: 0px
+$scrollSpeedBack: -1px
+$scrollSpeedDeep: -2px
+
+$scrollScaleBase: scale((1 + ($scrollSpeedBase * -1) / $perspective))
+$scrollScaleBack: scale((1 + ($scrollSpeedBack * -1) / $perspective))
+$scrollScaleDeep: scale((1 + ($scrollSpeedDeep * -1) / $perspective))
+
+.parallax
+	perspective: $perspective
+	height: 100vh
+	overflow-x: hidden
+	overflow-y: auto
+
+.parallax-layer
+	position: absolute
+	top: 0px
+	right: 0px	
+	bottom: 0px
+	left: 0px
+
+.parallax-layer-base
+	transform: translateZ($scrollSpeedBase) $scrollScaleBase
+
+.parallax-layer-back
+	transform: translateZ($scrollSpeedBack) $scrollScaleBack
+
+.parallax-layer-deep
+	transform: translateZ($scrollSpeedDeep) $scrollScaleDeep
+
+.parallax-group
+	position: relative
+	height: 100vh
+	transform-style: preserve-3d
+
+/* End Parallax Scrolling Tools */
 
 /* Basic Tools */
 
@@ -83,18 +138,70 @@ $bgColor: #F1EDE2
 .center
 	margin: 0 auto
 
+.fullscreen
+	height: auto
+	width: 100vw
+
+.roundBorders
+	@include borderRadius(5px)
+
+.boxShadow
+	@include boxShadow(2px,2px,5px,white)
+
+.paddingLarge
+	padding-top: 100px
+	padding-bottom: 100px
+
 /* End Basic Tools */
+
+/* Test Tools */
+
+.test-background-color-blue
+	background: #00AA9A
+
+.test-background-color-orange
+	background: #FD6824
+
+.test-background-color-red
+	background: #BF0228
+
+.test-background-color-white
+	background: #F1EDE2
+
+.test-text-color-blue
+	color: #00AA9A
+
+.test-text-color-orange
+	color: #FD6824
+
+.test-text-color-red
+	color: #BF0228
+
+.test-text-color-white
+	color: #F1EDE2
+
+.testTitle
+	text-align: center
+	position: absolute
+	left: 50%
+	top: 50%
+	transform: translate(-50%, -50%)
+
+/* Test Tools */
+
+/* Video Setup */
+
+#fullscreenVideo
+	min-height: auto
+	min-width: 100%
+
+/* End Video Setup */
 
 /* Special Case */
 
 body,html
 	background: #F1EDE2
 
-.innerCol
-	min-height: 370px
-	max-width: 300px
-	padding: 10px
-	@include borderRadius(5px)
-	@include boxShadow(2px,2px,5px,grey)
+
 
 /* End Special Case */
