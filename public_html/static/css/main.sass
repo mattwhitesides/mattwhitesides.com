@@ -1,0 +1,38 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,600')
+
+// needs latest Compass, add '@import "compass"' to your scss
+@mixin twoColorGradient($right,$left)
+	background: $right
+	background: -moz-linear-gradient(left,  $right 0%, $right 50%, $left 50%, $left 100%)
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,$right), color-stop(50%,$right), color-stop(50%,$left), color-stop(100%,$left))
+	background: -webkit-linear-gradient(left,  $right 0%,$right 50%,$left 50%,$left 100%)
+	background: -o-linear-gradient(left,  $right 0%,$right 50%,$left 50%,$left 100%)
+	background: -ms-linear-gradient(left,  $right 0%,$right 50%,$left 50%,$left 100%)
+	background: linear-gradient(to right,  $right 0%,$right 50%,$left 50%,$left 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$right', endColorstr='$left',GradientType=1 )
+
+
+body
+	@include twoColorGradient(#F2E5C5,#EF6245)
+h1
+	font-family: 'Open Sans', sans-serif
+	font-weight: 600
+	font-size: 50px
+	display: inline
+h3
+	font-family: 'Open Sans', sans-serif
+	
+.orange
+	color: #EF6245
+	margin-left: -127px
+.white
+	color: #F2E5C5
+	margin-left: 15px
+
+.center 
+	position: absolute
+	width: 420px
+	height: 345px
+	top: 50%
+	left: 50%
+	margin-top: -172px 

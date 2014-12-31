@@ -1,0 +1,25 @@
+<html>
+	<head></head>
+	<script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
+	<script id="shader-fs" type="x-shader/x-fragment">
+		precision mediump float;
+		
+		void main(void) {
+			gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+		}
+	</script>
+	<script id="shader-vs" type="x-shader/x-vertex">
+		attribute vec3 aVertexPosition;
+
+		uniform mat4 uMVMatrix;
+		uniform mat4 uPMatrix;
+
+		void main(void) {
+			gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+		}
+	</script>
+	<script type="text/javascript" src="webGLTest.js"></script>
+	<body onload="webGLStart();">
+		<canvas id="testCanvas" style="border: 2px solid black;" width="640" height="360"></canvas>
+	</body>
+</html>

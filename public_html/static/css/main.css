@@ -1,0 +1,38 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600");
+body {
+  background: -moz-linear-gradient(left, #f2e5c5 0%, #f2e5c5 50%, #ef6245 50%, #ef6245 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #f2e5c5), color-stop(50%, #f2e5c5), color-stop(50%, #ef6245), color-stop(100%, #ef6245));
+  background: -webkit-linear-gradient(left, #f2e5c5 0%, #f2e5c5 50%, #ef6245 50%, #ef6245 100%);
+  background: -o-linear-gradient(left, #f2e5c5 0%, #f2e5c5 50%, #ef6245 50%, #ef6245 100%);
+  background: -ms-linear-gradient(left, #f2e5c5 0%, #f2e5c5 50%, #ef6245 50%, #ef6245 100%);
+  background: linear-gradient(to right, #f2e5c5 0%, #f2e5c5 50%, #ef6245 50%, #ef6245 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$right', endColorstr='$left',GradientType=1 ); }
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  display: inline; }
+
+h3 {
+  font-family: "Open Sans", sans-serif; }
+
+.orange {
+  color: #ef6245;
+  margin-left: -127px; }
+
+.white {
+  color: #f2e5c5;
+  margin-left: 15px; }
+
+.white a {
+  color: #f2e5c5;
+}
+
+.center {
+  position: absolute;
+  width: 420px;
+  height: 345px;
+  top: 50%;
+  left: 50%;
+  margin-top: -172px; }
