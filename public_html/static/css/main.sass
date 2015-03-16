@@ -13,15 +13,19 @@
 
 
 body
-	@include twoColorGradient(#F2E5C5,#EF6245)
+	background-color: #F2E5C5
 h1
 	font-family: 'Open Sans', sans-serif
 	font-weight: 600
 	font-size: 50px
 	display: inline
-h3
+h3, h2, h4, a
 	font-family: 'Open Sans', sans-serif
-
+	color: #EF6245
+	h2
+		font-size: 50px
+.twoColor
+	@include twoColorGradient(#F2E5C5,#EF6245)
 .orange
 	color: #EF6245
 	margin-left: -127px
@@ -43,6 +47,9 @@ h3
 #noStyle
 	margin-left: 0px
 
+.textCenter
+	text-align: center
+
 .center
 	position: absolute
 	width: 550px
@@ -50,3 +57,9 @@ h3
 	top: 50%
 	left: 50%
 	margin-top: -172px
+
+.centerStuff
+	left: 50%
+
+.topPadding
+	margin-top: 20px
