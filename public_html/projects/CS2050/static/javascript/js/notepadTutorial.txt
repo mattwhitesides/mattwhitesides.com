@@ -1,0 +1,19 @@
+<ol>
+	<li>If using a school computer ignore step 2 most school PC's (at least in the engeneering buildings) have Notepad++ already installed</li>
+	<li>Download the software from the link above or <a href="http://notepad-plus-plus.org/download/v6.6.8.html">here</a></li>
+	<li>Install of course then open the program.</li>
+	<li>In the top bar find the "Plugins" selection and go to "Show NppFTP Window" (Plugins -> Show NppFTP Window)</li>
+	<li>A new side window menu thing should pop up.</li>
+	<li>In that new toobar at the top right of it should be a "Gear icon" click it and chose "Profile Settings" (Gear Icon -> Profile Settings)</li>
+	<li>A new window should pop up, at the bottom right of it click the "Add New" button to setup a new profile</li>
+	<li>Enter whatever name you want for your profile (ex: babbage or Mizzou or whatever)</li>
+	<li>In the "Username" Field enter "babbage.cs.missouri.edu" (Username: babbage.cs.missouri.edu)</li>
+	<li>For the "connection type" chose "SFTP" (Connection Type: SFTP)</li>
+	<li>This should automaticly set the "Port" to "22", if it dosen't make it "22" (Port: 22)</li>
+	<li>In the "username" field enter your "pawprint" (Username: "yourPawprint")</li>
+	<li>In the "password" field enter your "password" (Username: "yourPassword")</li>
+	<li>Now you can click close leaving all default settings unchanged, no saving or anything is needed it will automaticly save</li>
+	<li>Now click the plug icon thing at the top left of the SFTP side bar window, then click your profile name</li>
+	<li>If everything is correct you should see your babbage directories and you can fully use them like local files, saving will auto upload to babbage.</li>
+	<li>You can also use this interface to upload, download, change names, delete files, etc from the icons in the window on your babbage account</li>
+</ol>

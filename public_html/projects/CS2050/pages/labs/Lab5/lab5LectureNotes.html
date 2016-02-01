@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../../static/stylesheets/css/main.css">
+		<script src="../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+		<script src="../../../static/javascript/js/main.js" ></script>
+	</head>
+	<body class="lab5Theme">
+		<div id="navBar">
+			<ul class="center">
+				<a href="../../../"><li>Home</li></a>
+				<a href="../../tutorials/"><li>Tutorials</li></a>
+				<a href="../../labs/"><li>Labs</li></a>
+				<a href="../../info/"><li>Info</li></a>
+			</ul>
+		</div>
+
+		<h1 class="centerText navPadding">Lab 5 Notes</h1>
+
+		<h1 class="centerText">Introduction to Recursion</h1>
+		<h1 class="centerText">Note from math class</h1>
+		<div class="codeLarge center">
+			<h1>5! == (5 * 4 * 3 * 2 * 1) == 120</h1>
+		</div>
+
+		<h1 class="centerText topPadding">How could we write this function in code?</h1>
+		<div class="codeLarge center">
+			<h1>int factorial(int n) {</h1>
+				<h1 class="tab">if (n <= 1) {</h1>
+					<h1 class="tab2">return 1;</h1>
+				<h1 class="tab">}</h1>
+				<h1 class="tab">else {</h1>
+					<h1 class="tab2">return n * factorial(n - 1);</h1>
+				<h1 class="tab">}</h1>
+			<h1>}</h1>
+		</div>
+		<br>
+		<h1 class="centerText topPadding">Or a cooler way.</h1>
+		<div class="codeLarge center">
+			<h1>int factorial(int n) {</h1>
+				<h1 class="tab">return (n <= 1) ? 1 : n * factorial(n - 1);</h1>
+			<h1>}</h1>
+		</div>
+
+		<h1 class="centerText topPadding">So what is the computer actually doing here?</h1>
+		<div class="codeLarge center">
+			<h1>//1) 5 * factorial(5 - 1)</h1>
+			<h1>//2) 4 * factorial(4 - 1)</h1>
+			<h1>//3) 3 * factorial(3 - 1)</h1>
+			<h1>//4) 2 * factorial(2 - 1)</h1>
+			<h1>//5) return 1</h1>
+			<h1>//So now we have the first difnitive answer</h1>
+			<h1>//to return from a function call</h1>
+			<h1>//So it goes back down the list with acutal results</h1>
+			<h1>//6) return 2 * 1</h1>
+			<h1>//7) return 3 * 2</h1>
+			<h1>//8) return 4 * 6</h1>
+			<h1>//9) return 5 * 24</h1>
+			<h1>//So we finally return (5 * 24)</h1>
+			<h1>//Wich gives us the answer 120</h1>
+		</div>
+
+		<h1 class="centerText navPadding">Binary Search and Recursion</h1>
+
+		<h1 class="centerText">What is Binary Search?</h1>
+		<br>
+		<h1 class="centerText">Say we have a list of SORTED numbers to search through like so.</h1>
+		<div class="codeLarge center">
+			<h1>{1, 3, 4, 5, 8, 10, 12}</h1>
+		</div>
+		<br>
+		<h1 class="centerText">And we wanted to find the number 3.</h1>
+		<div class="codeLarge center">
+			<h1>/*</h1>
+			<h1 class="tab">Find the middle of the array</h1>
+			<h1 class="tab">Check if the desired number is equal, less,</h1>
+			<h1 class="tab">or greater then the middle number</h1>
+			<h1 class="tab">If it's equal we are done return the middle index.</h1>
+			<h1 class="tab">But it's not it is less than '5'</h1>
+			<h1 class="tab">So we now know its in this section of the array</h1>
+			<h1 class="tab">{1, 3, 4}</h1>
+			<h1 class="tab">So we call the function again within our function</h1>
+			<h1 class="tab">but limit the high and low indecies to 0 and the middle - 1</h1>
+			<h1 class="tab">Now of course the middle number is 3 which is what we wanted!</h1>
+			<h1>*/</h1>
+		</div>
+
+
+
+	</body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../../../static/stylesheets/css/main.css">
+		<script src="../../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+		<script src="../../../../static/javascript/js/main.js" ></script>
+	</head>	
+	<body>
+		<div id="navBar">
+			<ul class="center">
+				<a href="../../../../"><li>Home</li></a>
+				<a href="../../../tutorials/"><li>Tutorials</li></a>
+				<a href="../../../labs/"><li>Labs</li></a>
+				<a href="../../../info/"><li>Info</li></a>
+			</ul>
+		</div>
+
+		<h1 class="centerText navPadding">Compiling Multiple Files</h1>
+
+		<div class="article">
+			<h2 class="centerText">You may or may not have noticed that you can make multple C files and compile them into one output ex:</h2>
+			<br>
+			<h3 class="centerText">main.c</h3>
+			<div class="code2">
+				<h1>#include &ltstdio.h&gt</h1>
+				<br>
+				<h1>void print();</h1>				
+				<br>
+				<h1>int main(int argc, char *argv[]) {</h1>
+					<h1 class="tab">print();</h1>
+					<h1 class="tab">return 0;</h1>
+				<h1>}</h1>
+			</div>
+			<br>
+			<h3 class="centerText">functions.c</h3>
+			<div class="code2">
+				<h1>#include &ltstdio.h&gt</h1>
+				<br>			
+				<h1>void print() {</h1>
+					<h1 class="tab">printf("Whaa! Printing from a differnt file!");</h1>
+				<h1>}</h1>
+			</div>
+			<br>
+			<h3 class="centerText">You could compile it like this:</h3>									
+			<div class="code2">
+				<h1>gcc -o test main.c functions.c</h1>
+			</div>
+			<br>
+			<h3 class="centerText">Then execute it like so:</h3>									
+			<div class="code2">
+				<h1>./test</h1>
+			</div>	
+			<br>
+			<h3 class="centerText">But even this is a bit strange, why would I prototype a function in one file and write it in another? Answer: Header files! (Note the .h extention just like our stdio.h bro!)</h3>
+			<br>	
+			<h3 class="centerText">header.h</h3>
+			<div class="code2">			
+				<h1>void print();</h1>
+			</div>
+			<br>
+			<h3 class="centerText">Now lets change our main program to include this header and remove the prototype.</h3>
+			<br>
+			<h3 class="centerText">functions.c</h3>
+			<div class="code2">
+				<h1>#include &ltstdio.h&gt</h1>
+				<h1><div class="codeRed">#include</div> <div class="codeBlue">"header.h"</div></h1>
+				<br>
+				<h1>int main(int argc, char *argv[]) {</h1>
+					<h1 class="tab">print();</h1>
+					<h1 class="tab">return 0;</h1>
+				<h1>}</h1>
+			</div>
+			<br>			
+			<h3 class="centerText">This will compile and execute the same way and it will be smart enough to look for a file called header.h to include!</h3>	
+			<br>
+			<br>
+			<h2 class="centerText">So now we have three seperate files:</h2>
+		</div>
+		<br>
+		<div class="grid">
+			<div class="col-1-3">
+				<div class="codeSmall centerText center">
+					<h1>main.c</h1>	
+				</div>
+				<h3 class="centerText">The driver holding the main function.</h3>
+			</div>
+			<div class="col-1-3">
+				<div class="codeSmall centerText center">
+					<h1>functions.c</h1>	
+				</div>
+				<h3 class="centerText">The Function's logic</h3>
+			</div>
+			<div class="col-1-3">
+				<div class="codeSmall centerText center">
+					<h1>header.h</h1>
+				</div>
+				<h3 class="centerText">The header file containing the function prototypes.</h3>						
+			</div>								
+		</div>
+		<div class="article">
+			<br>
+			<h2 class="centerText">Thease are all getting compiled into one executable.</h2>	
+			<div class="codeSmall center">
+				<h1 class="centerText">test</h1>
+			</div>
+		</div>
+		<br>
+		<h1 class="centerText">As you can imagen this is very useful for large programs.</h1>
+		<h1 class="centerText">People can independantly make their own libraries.</h1>					
+		<h1 class="centerText">Then compile it into a final output.</h1>
+		<br>
+		<h1 class="centerText">Some notes:</h1>
+		<h2 class="centerText">1) You can only have one main() function out of all the files.</h2>					
+		<h2 class="centerText">2) You can have as many function files as you would like.</h2>
+		<h2 class="centerText">3) The files should have some logical grouping to them.</h2>												
+		<h2 class="centerText">4) You will only need to #include files relevent to the current file.</h2>														
+	</body>
+</html>

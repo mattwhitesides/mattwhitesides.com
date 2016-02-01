@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../../../static/stylesheets/css/main.css">
+    <script src="../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+    <script src="../../../static/javascript/js/main.js" ></script>
+  </head>
+  <body class="lab8Theme">
+
+    <div id="navBar">
+      <ul class="center">
+        <a href="../../../"><li>Home</li></a>
+        <a href="../../tutorials/"><li>Tutorials</li></a>
+        <a href="../../labs/"><li>Labs</li></a>
+        <a href="../../info/"><li>Info</li></a>
+      </ul>
+    </div>
+
+    <br>
+    <h1 class="centerText topPadding">Dereferencing Double Pointers to a Struct</h1>
+    <br>
+    <div class="center" id="forceCode2">
+      <h1>//Single derefrence for the entire struct</h1>
+      <h1>*structName</h1>
+      <br>
+      <h1>//Derefrence a single element</h1>
+      <h1>//Note the "()"</h1>
+      <h1>//Otherwise the -> would take order of presedience</h1>
+      <br>
+      <h1>(*structName)->data</h1>
+    </div>
+    <br>
+    <h1 class="centerText">Using fgets instead of fscanf</h1>
+    <h2 class="centerText">Fgets takes in a character buffer, a size limit and a file pointer.</h2>
+    <h2 class="centerText">Unlike fscanf which tries to determine the pattern of a file,</h2>
+    <h2 class="centerText">fgets puts in the character byte data read in from the file</h2>
+    <h2 class="centerText">and puts it raw into your char array.</h2>
+    <h2 class="centerText">fgets will read until your size limit is reached or gets to the end of a line.</h2>
+    <br>
+    <div class="center" id="forceCode2">
+      <h1>FILE* filePtr = fopen(fileName, "r");</h1>
+      <h1>char buffer[100];</h1>
+      <br>
+      <h1>while (fgets(buffer, 100, filePtr) != NULL) {</h1>
+      <h1 class="tab">//The variable buffer</h1>
+      <h1 class="tab">//now holds all the file data</h1>
+      <h1>}</h1>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../../static/stylesheets/css/main.css">
+		<script src="../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+		<script src="../../../static/javascript/js/main.js" ></script>
+	</head>	
+	<body class="lab3Theme">
+		<div id="navBar">
+			<ul class="center">
+				<a href="../../../"><li>Home</li></a>
+				<a href="../../tutorials/"><li>Tutorials</li></a>
+				<a href="../../labs/"><li>Labs</li></a>
+				<a href="../../info/"><li>Info</li></a>
+			</ul>
+		</div>
+
+		<h1 class="centerText navPadding">Lab 3 Notes</h1>
+		
+		<h1 class="centerText">Segmentation Faluts</h1>
+		<br>
+		<h2 class="centerText">Don't point to memory you have no business pointing to!</h2>
+		<h2 class="centerText bottomPadding">But if you do <a href="../../tutorials/gdb/">here</a> is a way to help find out what went wrong.</h2>
+		
+		<h1 class="centerText">Pointers</h1>
+		<br>
+		<h2 class="centerText">Refrencing a pointer</h2>
+		<br>
+		<div id="forceCode2" class="center">
+			<h1>int x = 99;</h1>
+			<h1>int* xPtr = &x;</h1>
+			<h1>printf("%p", &x);</h1>
+			<h1>//Outputs: 0x7fff5b508b5c</h1>
+		</div>
+		<br>
+		<h2 class="centerText">Derefrencing a pointer</h2>
+		<br>		
+		<div id="forceCode2" class="center">
+			<h1>*xPtr = -50;</h1>
+			<h1>printf("%d", x);</h1>
+			<h1>//Outputs: -50</h1>
+		</div>
+		
+		<h1 class="centerText topPadding bottomPadding">Structure Pointers</h1>
+
+		<h2 class="centerText">Say we have the following struct and pointer to it.</h2>
+		<br>		
+		<div id="forceCode2" class="center">
+			<h1>typedef struct {</h1>
+				<h1 class="tab">char name[20];</h1>
+				<h1 class="tab">int age;</h1>
+			<h1>} Hero;
+			<h1>Hero batman;</h1>
+			<h1>strcpy(batman.name, "Bruce");</h1>
+			<h1>batman.age = 40;</h1>
+			<br>
+			<h1>Hero* batmanPtr = &batman;</h1>
+		</div>
+		<br><br>
+		<h2 class="centerText">To derefrence variables within a struct a differnt syntax is required.</h2>
+		<br>		
+		<div id="forceCode2" class="center">
+			<h1>batmanPtr->age = 11;</h1>
+			<h1>printf("%d", batman.age);</h1>
+			<h1>//Outputs: 11</h1>
+		</div>
+		<br><br>
+		<h2 class="centerText">But if you wanted to derefrence the entire struct, it's as expected from before.</h2>
+		<br>		
+		<div id="forceCode2" class="center">
+			<h1>Hero batmanImposter = *batmanPtr;</h1>
+			<h1>printf("%s", batmanImposter.name);</h1>
+			<h1>//Outputs: Bruce</h1>
+		</div>
+		<br><br>
+		<h1 class="centerText">And now a quick side bar.</h1>
+		<br><br>
+		<h2 class="centerText">fscanf without knowing the file size.</h2>
+		<h2 class="centerText">fscanf does have a return type.</h2>
+		<h2 class="centerText">It's an int number of items sucessfully matched.</h2>
+		<br>		
+		<div id="forceCode2" class="center">
+			<h1>int numSuccess = fscanf(file, "%d%d%d", &x, &y, &z);</h1>
+			<h1>printf("%d", numSuccess);</h1>
+			<h1>//Outputs: 3</h1>
+		</div>
+		<br><br>
+		<h2 class="centerText">There is a built in function in stdio called feof</h2>
+		<br>		
+		<div id="forceCode2" class="center">
+			<h1>if (feof(filePtr)) {</h1>
+				<h1 class="tab">printf("%d", "End of File");</h1>
+			<h1>}</h1>
+		</div>
+		<br><br>		
+		<h2 class="centerText">So what if we wanted to loop until a file has ended?</h2>		
+		<div id="forceCode2" class="center">
+			<h1>while (1) {</h1>
+				<h1 class="tab">fscanf(file, "%d %d %d", &x, &y, &z);</h1>
+				<h1 class="tab">if (feof(file)) {</h1>
+					<h1 class="tab2">break;</h1>
+				<h1 class="tab">}</h1>
+			<h1>}</h1>
+		</div>
+		<br><br><br><br><br><br>
+	</body>
+</html>

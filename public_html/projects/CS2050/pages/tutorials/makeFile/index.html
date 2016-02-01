@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../../static/stylesheets/css/main.css">
+		<script src="../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+		<script src="../../../static/javascript/js/main.js" ></script>
+	</head>
+	<body>
+		<div id="navBar">
+			<ul class="center">
+				<a href="../../../"><li>Home</li></a>
+				<a href="../../tutorials/"><li>Tutorials</li></a>
+				<a href="../../labs/"><li>Labs</li></a>
+				<a href="../../info/"><li>Info</li></a>
+			</ul>
+		</div>
+
+		<h1 class="centerText navPadding">Basics making a ... Makefile</h1>
+
+		<div class="article">
+			<h2 class="centerText">Before going into makefiles let's make sure we understand how and why we would seperate programs into multiple files.</h2>
+			<br>
+			<a href="multiFiles/"><h2 class="centerText">!!!Tutorial Here!!!</h2></a>
+			<br><br>
+			<h2 class="centerText">Sweet now we can make some makefiles to help automate this process.</h2>
+			<h2 class="centerText">You could probably imagen the compile commands getting pretty crazy, somthing like this.</h2>
+			<div class="code2">
+				<h1>gcc -o myProgram main.c functions.c helpers.c stuff.c myMath.c grid.c -Wall -g -I....</h1>
+			</div>
+			<br>
+			<h2 class="centerText">Not only that but you have all your header files, dependincies, clean up after compile, differnt compolations depending on what you need, external files from other locations, ... ect.</h2>
+			<br>
+			<h2 class="centerText">Thats where the "make" program comes in, it's popular for C and C++ but all languages have build scripts very simmular to this concept.</h2>
+			<br>
+			<h2 class="centerText">Let's get started. First we should create a directory to store all our program files.</h2>
+			<div class="code2">
+				<h1>[pawprint@babbage ~]$ <div class="codeBlue">mkdir test</div></h1>
+				<br>
+				<h1>[pawprint@babbage ~]$ <div class="codeBlue">cd test</div></h1>
+			</div>
+			<br>
+			<h2 class="centerText">Now lets add all our program files into that directory.</h2>
+			<div class="code2">
+				<h1>[pawprint@babbage ~]$ <div class="codeBlue">ls</div></h1>
+				<br>
+				<h1>main.c functions.c header.h</h1>
+			</div>
+			<br>
+			<h2 class="centerText">Lets add to this our makefile. Makefile will automaticlly look for files with the name of 'makefile' or 'Makefile', it will just be a file with no extention on the end (no .txt or anything)</h2>
+			<div class="code2">
+				<h1>[pawprint@babbage ~]$ <div class="codeBlue">vim makefile</div></h1>
+			</div>
+			<br>
+			<h2 class="centerText">The simplist makefile you would make is a build operation. For our program lets add this text to the file. (Note the tab on line 2 this is important to makefiles it looks for formatting to know the higherarchy of the program, many scripting languages do this)</h2>
+			<div class="code2">
+				<h1>makeFileTest: main.c functions.c</h1>
+				<h1 class="tab2">gcc -o testProgram main.c functions.c</h1>
+			</div>
+			<br>
+			<h2 class="centerText">Now all we do to build this script is type 'make' and makefile will call all the approate commands to compile it. (See make is a simpler comand than all that gcc nonsince right?)</h2>
+			<div class="code2">
+				<h1>[pawprint@babbage ~]$ <div class="codeBlue">make</div></h1>
+				<br>
+				<h1>[pawprint@babbage ~]$ <div class="codeBlue">./testProgram</div></h1>
+			</div>
+			<br>
+			<h3 class="centerText">Obviously for somthing that small we diden't "need" the makefile but think if you had a ton of files and you had to share it with other people working on the project? What would be easier telling them all the things they need to compile or just have them type make?</h3>
+			<br>
+			<h3 class="centerText">This is only scratching the surface of course makefile is a much more powerful program than that, comming soon we will talk about variables, build types, project management and cleaning of files.</h3>
+			<br>
+			<h2 class="centerText bottomPadding">Dependency Management</h2>
+			<h3>Note from before the makeFileTest: stuff these are the dependincies that makefile will use.</h3>
+			<br>
+			<h2 class="centerText">The .o File</h2>
+			<h3>Normally when you comple you are doing a "full" compile down to the executable level but when compiling files individually you dont always want to link them to every other piece of the program</h3>
+			<h3>To compile to a "object" file we will add a -c flag</h3>
+			<div class="code2">
+				<h1>gcc functions.c -c</h1>
+				<h1>//Creates functions.o</h1>
+			</div>
+		</div>
+	</body>
+</html>

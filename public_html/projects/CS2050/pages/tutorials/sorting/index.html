@@ -1,0 +1,201 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../../static/stylesheets/css/main.css">
+		<script src="../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+		<script src="../../../static/javascript/js/main.js" ></script>
+	</head>
+	<body>
+		<div id="navBar">
+			<ul class="center">
+				<a href="../../../"><li>Home</li></a>
+				<a href="../../tutorials/"><li>Tutorials</li></a>
+				<a href="../../labs/"><li>Labs</li></a>
+				<a href="../../info/"><li>Info</li></a>
+			</ul>
+		</div>
+
+		<h1 class="centerText navPadding">Sorting Algorithms You Probably Want to Know</h1>
+
+		<div class="article">
+			<h2>Bubble Sort</h2>
+			<hr>
+			<article>
+				The basic idea behind a bubble sort is to step through the array comparing every two elements and swapping them if they are in the wrong order. For example if the array is [2][1][3] the first step would compare ([2][1])[3] and notice on the first comparison that 2 and 1 should be swapped so now you have [1][2][3] but it will still check 2 and 3 to make sure they are correct. Bubble sort has an average of O(n^2) complexity. Given it tries all cases no matter what the worst case sceneiro is also the same, making it a poor choice for larger "n" number of elements.
+			</article>
+			<br>
+			<h3 class="centerText">As Shown Here:</h3>
+			<div class="center">
+				<img class="boxShadow" alt="" src="http://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif" width="300" height="180" class="thumbimage" data-file-width="300" data-file-height="180">
+			</div>
+			<br>
+			<h3 class="centerText">Psudo Code:</h3>
+			<div class="code2">
+				<h1>FOR i in LENGTH - 1</h1>
+					<h1 class="tab">FOR j in LENGTH - i - 1</h1>
+						<h1 class="tab2">IF arrayElement[j] > arrayElement[j + 1]</h1>
+							<h1 class="tab3">SWAP arrayElement[j] and arrayElement[j + 1]</h1>
+						<h1 class="tab2">ENDIF</h1>
+					<h1 class="tab">ENDFOR</h1>
+				<h1>ENDFOR</h1>
+			</div>
+		</div>
+		<div class="article navPadding">
+			<h2>Selection Sort</h2>
+			<hr>
+			<article>
+				Selection sort is one of the best sorts to do in a list that is of reasonable size. While potentially not as efficient as the simmular insertion sort and larger sorting algroithems. Selection benifits from its simplicity and speed in small to medium size lists. By medium size I mean things around the thousands. As compared to Merge or Quick sorts which requires allocating space to store all the temporary lists, most smaller lists can be sorted in the ammount of time a more complex sorting takes to just initialize (this is fractions of seconds).<br>
+				Basicly selection sort finds the smallest value (or largest) on the first pass and places it at the begining, then finds the second smallest storing it at place two... ect this grows until there is no unsorted vlues left. Very simple and natural when you think about it.
+			</article>
+			<br>
+			<h3 class="centerText">Psudo Code:</h3>
+			<div class="code2">
+				<h1>FOR i = 1 in LENGTH</h1>
+					<h1 class="tab">SET temp TO arrayElement[i]</h1>
+					<h1 class="tab">FOR j = i - 1 in LENGTH > 0 AND arrayElement[j] > temp COUNTS BACKWARDS</h1>
+						<h1 class="tab2">SET arrayElement[j + 1] TO arrayElement[j]</h1>
+					<h1 class="tab">ENDFOR</h1>
+					<h1 class="tab">SET arrayElement[j + 1] TO temp</h1>
+				<h1>ENDFOR</h1>
+			</div>
+		</div>
+		<div class="article navPadding">
+			<h2>Insertion Sort</h2>
+			<hr>
+			<article>
+				Insertion is a slightly smarter version of Selection sort. Instead of finding the smallest value in the list and placing it at the start, insertion takes what ever value it has and places it in the "sorted" side of the list. This means it does not have to check each one for the minimum it just checks aginst whats already sorted. Like a selection sort, insertion is best for smaller lists, but still likely faster and computationally less expensive to preform on smaller lists than quick, merge or heap sort. In its worst case scenerio like if the elements where in the oppsite order desired it has the same complexity as selection (n(n-1)/2) but in most cases it will not need to search the whole list so its almost always better.
+			</article>
+			<br>
+			<h3 class="centerText">As Shown Here:</h3>
+			<div class="center">
+				<img class="boxShadow" alt="" src="http://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif" width="300" height="180" class="thumbimage" data-file-width="300" data-file-height="180">
+			</div>
+			<br>
+			<h3 class="centerText">Psudo Code:</h3>
+			<div class="code2">
+				<h1>FOR i = 1 LESS THAN OR EQUAL TO LENGTH - 1</h1>
+					<h1 class="tab">SET j TO i</h1>
+					<h1 class="tab">WHILE j > 0 AND arrayElement[j] < arrayElement[j - 1]</h1>
+						<h1 class="tab2">SWAP arrayElement[j] and arrayElement[j - 1]</h1>
+						<h1 class="tab2">SET j TO j - 1</h1>
+					<h1 class="tab">ENDWHILE</h1>
+				<h1>ENDFOR</h1>
+			</div>
+		</div>
+		<div class="article navPadding">
+			<h2>Merge Sort</h2>
+			<hr>
+			<article>
+				Ahh good ol' merge sort! The basic idea here is to recursively call the function each time breaking it up in half. Finally when you are left with only one element then as the returns actually start coming back the list is put back in order. Merge sort is great for its average complexity of O(n * log(n)) and being the same for its worst case. But merge comes at a cost because it needs to make an entire copy of the original list to work meaning there is a memory concern for larger arrays and a bit of overhead to setting it up, which is why most merge sort implementations have something like insertion sort built in for smaller arrays.
+			</article>
+			<br>
+			<h3>I recommend watching this if you want to see merge sort in action, or just something weird.</h3>
+			<h3>(Honestly I didn't even watch it all, but I was onboard within the first 5 seconds.)</h3>
+			<br>
+			<div class="center">
+				<iframe class="boxShadow" width="640" height="375" src="http://www.youtube.com/embed/XaqR3G_NVoo" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<br>
+			<h2 class="centerText">Psudo Code:</h2>
+			<br>
+			<h3 class="centerText">So there are two basic parts of our mergesort, the recursive splitting function and the merge function.</h3>
+			<br>
+ 			<div class="code2">
+				<h1>void <div class="codeOrange">MERGESORT</div> PARAMS array, low, high </h1>
+					<h1 class="tab">//Base case for the recursive call</h1>
+					<h1 class="tab">//Recursively calls itself passing in the first half of the split</h1>
+					<h1 class="tab">//Recursively calls itself passing in the second half of the split</h1>
+					<h1 class="tab">//Merge using the given params</h1>
+				<h1><div class="codeOrange">ENDMERGESORT</div></h1>
+			</div>
+			<br>
+			<h2 class="centerText">Next the actual merge</h2>
+			<div class="code2">
+				<h1>void <div class="codeOrange">MERGE</div> PARAMS array, low, mid, high </h1>
+					<h1 class="tab">//Create a tempoary array to be built
+					<h1 class="tab">//We will need 2 variables to store the lowest index for the first half and the lowest for the second half
+					<h1 class="tab">//We will also need a blank counter variable (let's call it k)
+					<br>
+					<h1 class="tab">//Loop while the first half and second half is less than their prespective highs
+						<h1 class="tab2">//In the loop check if the Nth element of the first half
+						<h1 class="tab2">//is less than or equal to the Nth element of the second half
+							<h1 class="tab3">//If so set the temp array at it's index to the the first half at it's index
+							<h1 class="tab3">//and iterate both the first halves index and the temp arrays index ('k')
+						<br>
+						<h1 class="tab2">//If not set the temp array at it's index to the second half at it's index
+						<h1 class="tab2">//and iterate both the second halves index and the temp arrays index ('k')
+					<h1 class="tab">//End Loop
+					<br>
+					<h1 class="tab">//Loop over the first half assigning the rest of the values to the temp array
+					<h1 class="tab">//Loop over the second half assiging the rest of it's values to the temp array
+					<br>
+					<h1 class="tab">//Subtract 1 from k as it's final iteration will cause it to bump up one too many
+					<br>
+					<h1 class="tab">//Loop backwards over k until 0
+						<h1 class="tab2">//assigning our real array at the index of the 'low' plus our current 'k'
+
+				<h1><div class="codeOrange">ENDMERGE</div></h1>
+				<br>
+			</div>
+ 			 <h3 class="centerText">This will be the actual function called from other functions, lets call it 'MERGESORT'</h3>
+			<div class="code2">
+				<h1>void <div class="codeOrange">MERGESORT</div> PARAMS array, low, high </h1>
+					<h1 class="tab"><div class="codeRed">IF</div> low IS LESS THAN high</h1>
+						<h1 class="tab2">SET mid TO low + high / 2</h1>
+						<h1 class="tab2">mergeSort(array, low, mid)</h1>
+						<h1 class="tab2">mergeSort(array, mid + 1, high)</h1>
+						<h1 class="tab2">merge(array, low, mid, high)</h1>
+					<h1 class="tab"><div class="codeRed">ENDIF</div></h1>
+				<h1><div class="codeOrange">ENDMERGESORT</div></h1>
+			</div>
+			<br>
+			<h3 class="centerText">Here we have the comparison and building function called from MERGESORT, lets call it MERGE</h3>
+			<div class="code2">
+				<h1>void <div class="codeOrange">MERGE</div> PARAMS array, low, mid, high </h1>
+					<h1 class="tab">INITIALIZE tempArray</h1>
+					<h1 class="tab">INITIALIZE i SET TO low</h1>
+					<h1 class="tab">INITIALIZE j SET TO mid + 1</h1>
+					<h1 class="tab">INITIALIZE k SET TO 0</h1>
+					<br>
+					<h1 class="tab"><div class="codeBlue">WHILE</div> i <= mid AND j <= high</h1>
+						<h1 class="tab2"><div class="codeRed">IF</div> array[i] <= array[j]</h1>
+							<h1 class="tab3">SET tempArray[k++] TO array[i++]</h1>
+						<h1 class="tab2"><div class="codeRed">ENDIF</div></h1>
+						<h1 class="tab2"><div class="codeRed">ELSE</div></h1>
+							<h1 class="tab3">SET tempArray[k++] TO array[j++]</h1>
+						<h1 class="tab2"><div class="codeRed">ENDELSE</div></h1>
+					<h1 class="tab"><div class="codeBlue">ENDWHILE</div></h1>
+					<h1 class="tab"><div class="codeBlue">WHILE</div> i <= mid</h1>
+						<h1 class="tab2">SET tempArray[k++] TO array[i++]</h1>
+					<h1 class="tab"><div class="codeBlue">ENDWHILE</div></h1>
+					<h1 class="tab"><div class="codeBlue">WHILE</div> j <= mid</h1>
+						<h1 class="tab2">SET tempArray[k++] TO array[j++]</h1>
+					<h1 class="tab"><div class="codeBlue">ENDWHILE</div></h1>
+					<h1 class="tab">SET k TO k -1</h1>
+					<h1 class="tab"><div class="codeBlue">WHILE</div> k > 0</h1>
+						<h1 class="tab2">SET array[low + k] TO tempArray[k]</h1>
+						<h1 class="tab2">SET k TO k - 1</h1>
+					<h1 class="tab"><div class="codeBlue">ENDWHILE</div></h1>
+				<h1><div class="codeOrange">ENDMERGE</div></h1>
+			</div>
+			<br>
+			<h3 class="centerText">Boom there we have it, to call it just do somthing simmular to a binary search</h3>
+			<div class="code2">
+				<h1>mergeSort(array, 0, length);</h1>
+			</div>
+		</div>
+		<div class="article navPadding">
+			<h2>Heap Sort</h2>
+			<hr>
+			<article>
+				Comming Soon...
+			</article>
+		</div>
+		<div class="article navPadding">
+			<h2>Quick Sort</h2>
+			<hr>
+			<article>
+				Comming Soon...
+			</article>
+		</div>
+	</body>
+</html>

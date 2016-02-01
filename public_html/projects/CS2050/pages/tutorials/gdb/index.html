@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../../static/stylesheets/css/main.css">
+		<script src="../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+		<script src="../../../static/javascript/js/main.js" ></script>
+	</head>	
+	<body>
+		<div id="navBar">
+			<ul class="center">
+				<a href="../../../"><li>Home</li></a>
+				<a href="../../tutorials/"><li>Tutorials</li></a>
+				<a href="../../labs/"><li>Labs</li></a>
+				<a href="../../info/"><li>Info</li></a>
+			</ul>
+		</div>
+
+		<h1 class="centerText navPadding">Basics of the GDB Debugger</h1>
+
+		<div class="article">
+			<h2>Basic Seg Falut Finding</h2>
+			<hr>
+			<article>
+				As you surely have noticed by now when you compile and run a program and results in a segmentation falut you dont get any information just a line of text that says "Segmentation Falut". This obviously is not very helpful, thats where the GDB debugger comes in. Using this you can pinpoint the exact line number that the segfault came from and the proceeding stack trace the system had before the falut.
+			</article>
+			<br>
+			<h2 class="centerText">To find the location of an existing seg fault follow these steps:</h2>
+			<h2 class="centerText">(What you type is in <div style="display:inline;color:#04C4D9">Blue</div>)</h2>
+			<br>
+			<br>
+			<h3 class="centerText">Compile the file normally except add the '-g' flag after the filename like so.</h3>
+			<div class="code2">
+				<h1>[pawprint@babbage currentDir]$ <div class="codeBlue">gcc fileName.c -g</div></h1>
+			</div>
+			<br>
+			<h3 class="centerText">To run gdb just type gdb and pass in your compiled output file (like an argument... it's all comming together)</h3>
+			<div class="code2">
+				<h1>[pawprint@babbage currentDir]$ <div class="codeBlue">gdb a.out</div></h1>
+			</div>
+			<br>			
+			<h3 class="centerText">A bunch of info about the program will pop up with a new prompt.</h3>			
+			<h3 class="centerText">In the prompt type run and then your aurgments if you have any (just think of run as ./a.out)</h3>
+			<div class="code2">
+				<h1>GNU gdb (GDB) Red Hat Enterprise Linux (7.2-64.el6_5.2)</h1>
+				<h1>...</h1>
+				<h1>...</h1>
+				<h1>(gdb) <div class="codeBlue">run 'optional arguments'</div></h1>
+			</div>
+			<br>
+			<h3 class="centerText">The program will run and if a segfault happens a buch of stuff will pop up. For example: </h3>
+			<div class="code2 center">
+				<h1>Program received signal SIGSEGV, Segmentation fault.</h1>
+				<h1>0x00000000004009f5 in functionName (myPtr=0x7fffffffe020, myInt=3, myCharPtr=0x7fffffffe4a5 "input.txt") at myLab.c:<div class="codeRed">112</div></h1>
+				<h1><div class="codeRed">112</div>			if (myPtr->myStructVar + someThing < 0)</h1>
+				<h1>(gdb)</h1>
+			</div>
+			<h3 class="centerText">Note in <div style="display:inline;color:#D73117">red</div> the line number where the segfalut occured.</h3>
+			<br>
+			<br>
+			<h2 class="centerText">For a more complete stack trace:</h2>
+			<div class="code2 center">
+				<h1>(gdb) <div class="codeBlue">where</div></h1>
+			</div>
+			<br>
+			<h2 class="centerText">This will display the trace of the function calls that lead to this.</h2>
+			<div class="code2 center">
+				<h1>#0  0x00000000004009f5 in functionName (myPtr=0x7fffffffe020, myInt=3, myCharPtr=0x7fffffffe4a5 "input.txt") at myLab.c:<div class="codeRed">112</div></h1>
+				<h1>#1  0x0000000000400611 in main (argc=3, argv=0x7fffffffe1b8) at myLab.c:30</h1>
+				<h1>(gdb)</h1>
+			</div>								
+			<h2 class="centerText">For this example a function was called in "main" and in the function "functionName" on line "112" a seg fault happened.</h2>
+			<br>
+			<h2 class="centerText">To quit simply type 'q', it may ask you to say 'y' to stop debugging.</h2>
+			<div class="code2 center">
+				<h1>(gdb) <div class="codeBlue">q</div></h1>
+			</div>	
+			<br>
+			<br>
+			<br>
+		</div>					
+	</body>
+</html>

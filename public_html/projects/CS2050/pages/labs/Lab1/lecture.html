@@ -1,0 +1,215 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../../../static/stylesheets/css/main.css">
+    <script src="../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+    <script src="../../../static/javascript/js/main.js" ></script>
+  </head>
+  <body class="lab1Theme">
+
+    <div id="navBar">
+      <ul class="center">
+        <a href="../../../"><li>Home</li></a>
+        <a href="../../tutorials/"><li>Tutorials</li></a>
+        <a href="../../labs/"><li>Labs</li></a>
+        <a href="../../info/"><li>Info</li></a>
+      </ul>
+    </div>
+
+    <br>
+    <h1 class="centerText topPadding">C, UNIX, &amp; Compiling Basics</h1>
+    <h2 class="centerText topPadding">For a more detailed working code example click <a href="cBasics.c">here</a>.</h2>
+    <br>
+    <h1 class="centerText topPadding">Unix and Terminal</h1>
+    <h3 class="centerText">Note: Don't type the ''</h3>
+    <br>
+    <h2 class="centerText">List Current Directories</h2>
+    <div class="center" id="forceCode2">
+      <h1>ls</h1>
+    </div>
+    <br>
+    <h2 class="centerText">Change Current Directory</h2>
+    <div class="center" id="forceCode2">
+      <h1>cd 'directoryName'</h1>
+      <br>
+      <h1>//Back up one directory</h1>
+      <h1>cd ..</h1>
+      <br>
+      <h1>//Return to your home directory</h1>
+      <h1>cd</h1>
+    </div>
+    <br>
+    <h2 class="centerText">Create a New Directory</h2>
+    <div class="center" id="forceCode2">
+      <h1>mkdir 'directoryName'</h1>
+    </div>
+    <br>
+    <br>
+    <h2 class="centerText">Copy, Move and Rename Files</h2>
+    <div class="center" id="forceCode2">
+      <h1>//Copy file from current location to another</h1>
+      <h1>cp 'fileName' 'destination'</h1>
+      <br>
+      <h1>//Move a file</h1>
+      <h1>mv 'fileName' 'destination'</h1>
+      <br>
+      <h1>//Rename a file</h1>
+      <h1>mv 'fileName' 'newfileName'</h1>
+    </div>
+    <br>
+    <h3 class="centerText">It's highly suggested that you create a new directory for every lab and assignment.</h3>
+    <h3 class="centerText">For example a new Lab1 directory that stores lab 1 files.</h3>
+    <h3 class="centerText">We may not have multiple files for labs now but very soon we will.</h3>
+    <br>
+    <br>
+    <h1 class="centerText topPadding">Compiling and Submitting Assignments</h1>
+    <br>
+    <h2 class="centerText">Compiling &amp; Running a Program With GCC</h2>
+    <br>
+    <h3 class="centerText">Note: The $ just means this is in a command line do not type it.</h3>
+    <br>
+    <div class="center" id="forceCode2">
+      <h1><div class="codeBlue">//Basic argument structure.</div></h1>
+      <h1><div class="codeOrange">$ </div> gcc 'fileName.c' -o 'outputFileName' 'flags'</h1>
+      <br>
+      <h1><div class="codeBlue">//Note: Each arguement besides the first is optional.</div></h1>
+      <h1><div class="codeBlue">//Examples to compile and run</div></h1>
+      <br>
+      <h1><div class="codeOrange">$ </div> gcc lab1.c</h1>
+      <h1><div class="codeOrange">$ </div> ./a.out</h1>
+      <br>
+      <h1><div class="codeBlue">//Or to rename the compiled executable use the -o flag</div></h1>
+      <br>
+      <h1><div class="codeOrange">$ </div> gcc lab1.c -o lab1</h1>
+      <h1><div class="codeOrange">$ </div> ./lab1</h1>
+      <br>
+      <h1><div class="codeBlue">//Or to compile multiple files</div></h1>
+      <br>
+      <h1><div class="codeOrange">$ </div> gcc lab1.c runner.c functions.c -o lab1</h1>
+      <h1><div class="codeOrange">$ </div> ./lab1</h1>
+    </div>
+    <br>
+    <h3 class="centerText">I recomend you always compile showing warnings.</h3>
+    <h3 class="centerText">By default only errors are shown.</h3>
+    <h3 class="centerText">Warnings will compile but should always be delt with.</h3>
+    <h3 class="centerText">Clearing them will greatly help with logic or unseen syntax errors.</h3>
+    <br>
+    <div class="center" id="forceCode2">
+      <h1><div class="codeBlue">//To do so use the -Wall flag</div></h1>
+      <br>
+      <h1><div class="codeOrange">$ </div> gcc lab1.c -Wall</h1>
+      <h1><div class="codeOrange">$ </div> ./a.out</h1>
+    </div>
+    <br>
+    <br>
+    <h1 class="centerText topPadding">Debugging Your Program</h1>
+    <br>
+    <h2 class="centerText">Debugging will help you pin point seg faults, variable logic and much more.</h2>
+    <br>
+    <h2 class="centerText">Go <a href="http://babbage.cs.missouri.edu/~mbwxd4/cs2050/CS2050_Lab-E/pages/tutorials/gdb/">here</a> to learn more about the GDB debugger.</h2>
+    <br>
+    <h1 class="centerText topPadding">Beginner to Intermediate C Programming</h1>
+    <br>
+    <h2 class="centerText">Basic Data Types</h2>
+    <h3 class="centerText">Note: Please never use x as a real life variable name.</h3>
+    <h3 class="centerText">(Unless your variable is actually an x,y coordinate or somthing)</h3>
+    <br>
+    <h2 class="centerText">Integers</h2>
+    <h3 class="centerText">Whole numbers ranging from -32767,32767</h3>
+    <div class="center" id="forceCode2">
+      <h1><div class="codeBlue">//Creates and assigns a new variable of interger data type.</div></h1>
+      <h1>int x = 734;</h1>
+      <br>
+      <h1><div class="codeBlue">//Creates and assigns a new variable of long data type.</div></h1>
+      <h1><div class="codeBlue">//Double the size in memory of standard int.</div></h1>
+      <h1>long x = 734734734;</h1>
+      <br>
+    </div>
+    <br>
+    <h2 class="centerText">Floating Point Data Types</h2>
+    <h3 class="centerText">Data types that support decimal point precision.</h3>
+    <div class="center" id="forceCode2">
+      <h1><div class="codeBlue">//Creates and assigns a new variable of float data type.</div></h1>
+      <h1>float x = 734.734;</h1>
+      <br>
+      <h1><div class="codeBlue">//Creates and assigns a new variable of double data type.</div></h1>
+      <h1><div class="codeBlue">//The exact memory of float and double vary ammong compilers.</div></h1>
+      <h1><div class="codeBlue">//For this class float will almost exclusively be used.</div></h1>
+      <h1><div class="codeBlue">//But double has double the memory limit of float.</div></h1>
+      <h1>double x = 734.734734734734;</h1>
+    </div>
+    <br>
+    <h2 class="centerText">Characters</h2>
+    <h3 class="centerText">Small whole numbers from 0,127 representing a character on the ASCII table.</h3>
+    <div class="center" id="forceCode2">
+      <h1><div class="codeBlue">//Creates and assigns a new variable of character data type.</div></h1>
+      <h1>char x = 'Z';</h1>
+      <br>
+    </div>
+    <br>
+    <h2 class="centerText">Strings (Arrays of Characters)</h2>
+    <h3 class="centerText">Strings are not a built in data type in C.</h3>
+    <h3 class="centerText">Thus we treat them as character arrays.</h3>
+    <h3 class="centerText">Note strings should end with a null terminator '\0'.</h3>
+    <h3 class="centerText">This is simply to let most functions know when you hit the end of the string which could be differnt than the end of the array.</h3>
+    <div class="center" id="forceCode2">
+      <h1><div class="codeBlue">//Creates and assigns a new character array assigned to the given string.</div></h1>
+      <h1>char* x = "Hello";</h1>
+      <br>
+      <h1><div class="codeBlue">//Same as</div></h1>
+      <h1>char x[] = {'H', 'e', 'l', 'l', 'o', '\0'};</h1>
+      <br>
+    </div>
+    <br>
+    <h2 class="centerText">User Defined Data Types (Structures)</h2>
+    <h3 class="centerText">Defining new abstract data types from a combination of the basic data types</h3>
+    <div class="center" id="forceCode2">
+      <h1><div class="codeBlue">//Defines a new datatype called "Person"</div></h1>
+      <h1>typedef struct {</h1>
+        <h1 class="tab">int age;</h1>
+        <h1 class="tab">char name[20];</h1>
+      <h1>} Person;</h1>
+      <br>
+      <h1><div class="codeBlue">//Create a new variable joe of type Person</div></h1>
+      <h1>Person joe;</h1>
+      <h1>joe.age = 22;</h1>
+      <h1><div class="codeBlue">//Note you cannot directly reassign arrays.</div></h1>
+      <h1><div class="codeBlue">//You will need to use the strcpy function.</div></h1>
+      <h1><div class="codeBlue">//This works like you would think joe.name = "Joe" would.</div></h1>
+      <h1>strcpy(joe.name, "Joe");</h1>
+    </div>
+    <br>
+    <br>
+    <h2 class="centerText">Malloc &amp; Malloc</h2>
+    <h3 class="centerText">Dynamically allocating new memory and assigning them to pointers</h3>
+    <div class="center" id="forceCode2">
+      <h1><div class="codeBlue">//Say we want a char array of size 5</div></h1>
+      <h1>int* numArray = malloc(sizeof(int) * 5);</h1>
+      <h1><div class="codeBlue">//Note malloc takes in one parameter the size of desired bytes</div></h1>
+      <h1><div class="codeBlue">//and it returns a pointer to the memory block allocated</div></h1>
+      <h1><div class="codeBlue">//We can now treat numArray as a int array of 5.</div></h1>
+      </div>
+    <br>
+    <h2 class="centerText">Pointers</h2>
+    <h3 class="centerText">Pointers are simply memory locations of data.</h3>
+    <h3 class="centerText">You can think of a pointer as a short cut to a file.</h3>
+    <h3 class="centerText">You can change the value of the data without changing the pointer.</h3>
+    <div class="center" id="forceCode2">
+      <h1><div class="codeBlue">//Lets init a value and a pointer to it.</div></h1>
+      <h1>int x = 5;</h1>
+      <h1><div class="codeBlue">//To "refrence" a values memory loaction use the &amp; sign.</div></h1>
+      <h1>int* xPtr = &amp;x;</h1>
+      <h1><div class="codeBlue">//Now we could do things like pass xPtr into a function.</div></h1>
+      <h1><div class="codeBlue">//Then we could change x ouside our current scope.</div></h1>
+      <h1><div class="codeBlue">//To "derefrence" a pointer to get the value use the * sign.</div></h1>
+      <h1>*xPtr = 99;</h1>
+      <br>
+      <h1><div class="codeBlue">//Recall arrays are just pointers to the first index.</div></h1>
+      <h1>int array[] = {1,2,3,4,5};</h1>
+      <h1><div class="codeBlue">//So if we just derefrence "array" we get 1.</div></h1>
+      <h1>printf("%d", *array);</h1>
+      <h1><div class="codeBlue">//Outputs: 1</div></h1>
+    </div>
+    <h2 class="centerText">Refer to the <a href="cBasics.c">Code Example</a> for more about functions, loops, pointers, ect.</h2>
+    <br>
+  </body>
+</html>

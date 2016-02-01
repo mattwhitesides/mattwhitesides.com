@@ -1,0 +1,618 @@
+/* Basic Setup */
+*
+	margin: 0
+	padding: 0
+
+$padding: 0px
+$bgColor: #F1EDE2
+$codeGreen: #8ECA16
+$codeBg: rgba(0,43,51,.8)
+$codeRed: #D73117
+$codeBlue: #04C4D9
+$codeOrange: #FF530D
+
+/* Mixin Setup */
+
+@mixin borderRadius($br)
+	border-radius: $br
+	-webkit-border-radius: $br
+	-moz-border-radius: $br
+
+@mixin boxShadow($h,$v,$blur,$color)
+	box-shadow: $h $v $blur $color
+	-webkit-box-shadow: $h $v $blur $color
+	-moz-box-shadow: $h $v $blur $color
+
+/* End Mixin Setup */
+
+/* Custom Fonts Setup */
+
+@font-face
+	font-family: halloween
+	src: url(../../fonts/halloween.ttf)
+
+@font-face
+	font-family: Inversionz
+	src: url(../../fonts/Inversionz.otf)
+
+@font-face
+	font-family: LemonMilk
+	src: url(../../fonts/LemonMilk.otf)
+
+/* End Fonts Setup*/
+
+/* Font Theme Setup */
+
+// @font-face
+// 	font-family: open-sans
+// 	src: url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700')
+
+body, html
+	font-family: open-sans, sans-serif
+	background: #F1EDE2
+	h1, h2, h3
+		font-weight: 300
+	article, p
+		font-weight: 300
+	.fullScreenBG
+		background: url(../../images/breatheBG.png) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+
+	.lab1Theme
+		background: url(../../images/Lab1.png) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		h1,h2,h3,h4, a
+			color: #F1EDE2
+			a
+				color: $codeGreen
+		#navBar
+			background: #F1EDE2
+			a
+				color: black
+				&:hover
+					color: $codeGreen
+	.lab2Theme
+		background: url(../../images/lab2.png) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		h1,h2,h3,h4, a
+			color: #F1EDE2
+			font
+			a
+				color: $codeGreen
+		#navBar
+			background: #F1EDE2
+			a
+				color: black
+				&:hover
+					color: $codeGreen
+	.lab3Theme
+		background: url(../../images/lab3Theme.jpg) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		a
+			color: $codeGreen
+	.lab4Theme
+		background: url(../../images/punkTheme.png) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		h1,h2,h3,h4, a
+			color: #F1EDE2
+			font
+			a
+				color: $codeGreen
+		#navBar
+			background: #F1EDE2
+			a
+				color: black
+				&:hover
+					color: $codeGreen
+	.lab5Theme
+		background: url(../../images/lab5.jpg) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		.codeLarge
+			h1,h2,h3,h4, a
+				color: $codeGreen
+		h1,h2,h3,h4, a
+			color: #F1EDE2
+			a
+				color: $codeGreen
+		#navBar
+			background: #F1EDE2
+			a
+				color: black
+				&:hover
+					color: $codeGreen
+	.lab6Theme
+		background: url(../../images/lab6.jpg) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		.codeLarge
+			h1,h2,h3,h4, a
+				color: $codeGreen
+		h1,h2,h3,h4, a
+			color: #F1EDE2
+			a
+				color: $codeGreen
+		#navBar
+			background: #F1EDE2
+			a
+				color: black
+				&:hover
+					color: $codeGreen
+	.lab7Theme
+		background: url(../../images/Lab7.png) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		.codeLarge
+			h1,h2,h3,h4, a
+				color: $codeGreen
+		h1,h2,h3,h4, a
+			color: #F1EDE2
+			a
+				color: $codeGreen
+		#navBar
+			background: #F1EDE2
+			a
+				color: black
+				&:hover
+					color: $codeGreen
+
+	.lab8Theme
+		background: url(../../images/Lab8.jpg) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		.codeLarge
+			h1,h2,h3,h4, a
+				color: $codeGreen
+		h1,h2,h3,h4, a
+			color: #F1EDE2
+			a
+				color: $codeGreen
+		#navBar
+			background: #F1EDE2
+			a
+				color: black
+				&:hover
+					color: $codeGreen
+	.lab9Theme
+		background: url(../../images/lab9b.jpg) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		h1,h2,h3,h4, a
+			color: black
+			a
+				color: $codeGreen
+		#navBar
+			background: black
+			a
+				color: #F1EDE2
+				&:hover
+					color: $codeGreen
+	.lab10Theme
+		background: url(../../images/lab10.png) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		h1,h2,h3,h4, a
+			color: #F1EDE2
+		h1
+			font-family: Inversionz
+			font-size: 35px
+		.title
+			font-size: 80px
+			a
+				color: $codeGreen
+		#navBar
+			background: black
+			a
+				color: #F1EDE2
+				&:hover
+					color: $codeGreen
+	.lab11Theme
+		background: url(../../images/lab11.png) no-repeat center center fixed
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		h1,h2,h3,h4, a
+			color: #F1EDE2
+		h1
+			font-family: LemonMilk
+			font-size: 35px
+		h2
+			font-family: LemonMilk
+			font-size: 35px
+		.title
+			font-size: 80px
+			a
+				color: $codeGreen
+		#navBar
+			background: black
+			a
+				color: #F1EDE2
+				&:hover
+					color: $codeGreen
+
+/* End Theme Setup */
+
+/* Grid Setup (Thanks to Chris Coyier at http://css-tricks.com/dont-overthink-it-grids/) */
+
+*, *:after, *:before
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+.grid
+	margin: 0 0 $padding 0
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+/* Optional Grid Padding */
+
+.grid-pad
+	padding: $padding 0 $padding $padding
+	[class*='col-']:last-of-type
+		padding-right: $padding
+
+/* End Optional Grid Padding */
+
+[class*='col-']
+	float: left
+	padding-right: $padding
+	.grid &:last-of-type
+		padding-right: 0px
+
+.col-1-8
+	width: 12.5%
+
+.col-1-4
+	width: 25%
+
+.col-1-3
+	width: 33.33%
+
+.col-1-2
+	width: 50%
+
+.col-2-3
+	width: 66.66%
+
+.innerCol
+	max-width: 300px
+	padding: 10px
+	img
+		padding-bottom: 20px
+	h1
+		padding-top: 10px
+		padding-bottom: 10px
+
+.minInnerColHeight
+	min-height: 461px
+
+/* End Grid Setup */
+
+/* End Basic Setup */
+
+/* Parallax Scrolling Tools (Thanks to http://blog.keithclark.co.uk/pure-css-parallax-websites/ for the tips!) */
+
+$perspective: 1px
+$scrollSpeedBase: 0px
+$scrollSpeedBack: -1px
+$scrollSpeedDeep: -2px
+
+$scrollScaleBase: scale((1 + ($scrollSpeedBase * -1) / $perspective))
+$scrollScaleBack: scale((1 + ($scrollSpeedBack * -1) / $perspective))
+$scrollScaleDeep: scale((1 + ($scrollSpeedDeep * -1) / $perspective))
+
+.parallax
+	perspective: $perspective
+	height: 100vh
+	overflow-x: hidden
+	overflow-y: auto
+
+.parallax-layer
+	position: absolute
+	top: 0px
+	right: 0px
+	bottom: 0px
+	left: 0px
+
+.parallax-layer-base
+	transform: translateZ($scrollSpeedBase) $scrollScaleBase
+
+.parallax-layer-back
+	transform: translateZ($scrollSpeedBack) $scrollScaleBack
+
+.parallax-layer-deep
+	transform: translateZ($scrollSpeedDeep) $scrollScaleDeep
+
+.parallax-group
+	position: relative
+	height: 100vh
+	transform-style: preserve-3d
+
+/* End Parallax Scrolling Tools */
+
+/* Basic Tools */
+
+.centerText
+	text-align: center
+
+.center
+	margin: 0 auto
+	img
+		display: block
+		margin-left: auto
+		margin-right: auto
+
+.fullscreen
+	height: auto
+	width: 100vw
+
+.roundBorders
+	@include borderRadius(5px)
+
+.boxShadow
+	@include boxShadow(2px,2px,5px,$codeBg)
+
+.paddingLarge
+	padding-top: 100px
+	padding-bottom: 100px
+
+.bottomPadding
+	padding-bottom: 50px
+
+/* End Basic Tools */
+
+/* Test Tools */
+
+.test-background-color-blue
+	background: #00AA9A
+
+.test-background-color-orange
+	background: #FD6824
+
+.test-background-color-red
+	background: #BF0228
+
+.test-background-color-white
+	background: #F1EDE2
+
+.test-text-color-blue
+	color: #00AA9A
+
+.test-text-color-orange
+	color: #FD6824
+
+.test-text-color-red
+	color: #BF0228
+
+.test-text-color-white
+	color: #F1EDE2
+
+.testTitle
+	text-align: center
+	position: absolute
+	left: 50%
+	top: 35%
+	transform: translate(-50%, -50%)
+
+
+/* Test Tools */
+
+/* Video Setup */
+
+#bgVid
+	position: fixed
+	right: 0
+	bottom: 0
+	width: auto
+	min-width: 100%
+	height: auto
+	min-height: 100%
+	z-index: -100
+	background: transparent url(video-bg.jpg) no-repeat
+	background-size: cover
+
+/* End Video Setup */
+
+/* NavBar Setup */
+
+$navWidth: 300px
+$navHeight: 50px
+$navBr: 30px
+
+.navPadding
+	padding-top: ($navHeight * 2)
+	padding-bottom: $navHeight
+
+.navPaddingNoBottom
+	padding-top: ($navHeight * 2)
+
+.bottomPadding
+	padding-bottom: $navHeight
+
+.topPadding
+	padding-top: $navHeight
+
+#navBar
+	background: black
+	color: $bgColor
+	height: $navHeight
+	width: $navWidth
+	position: fixed
+	text-align: center
+	font-size: 16px
+	left: 50%
+	margin-left: ($navWidth/-2)
+	border-bottom-left-radius: $navBr
+	border-bottom-right-radius: $navBr
+	a
+		color: $bgColor
+		&:hover
+			color: $codeGreen
+	li
+		display: inline-block
+		padding:  10px
+
+/* End NavBar Setup */
+
+/* Code Formatting */
+
+.code
+	background: $codeBg
+	width: 625px
+	@include borderRadius(5px)
+	h1, a
+		font-family: courier
+		color: $codeGreen
+		padding: 10px
+		.codeRed
+			color: $codeRed
+			display: inline
+		.codeBlue
+			color: $codeBlue
+			display: inline
+		.codeOrange
+			color: $codeOrange
+			display: inline
+
+.code2, #forceCode2
+	background: $codeBg
+	width: 800px
+	@include borderRadius(5px)
+	h1
+		font-family: courier
+		color: $codeGreen
+		padding: 10px
+		font-size: 22px
+		.codeRed
+			color: $codeRed
+			display: inline
+		.codeBlue
+			color: $codeBlue
+			display: inline
+		.codeOrange
+			color: $codeOrange
+			display: inline
+
+.codeSmall, #forceCodeSmall
+	background: $codeBg
+	width: 400px
+	@include borderRadius(5px)
+	h1, a
+		font-family: courier
+		color: $codeGreen
+		font-size: 22px
+		a
+			color: $codeGreen
+		padding: 10px
+		.codeRed
+			color: $codeRed
+			display: inline
+
+.codeLarge, #forceCodeLarge
+	background: $codeBg
+	width: 1000px
+	@include borderRadius(5px)
+	h1
+		font-family: courier
+		color: $codeGreen
+		padding: 10px
+		font-size: 22px
+		.codeRed
+			color: $codeRed
+			display: inline
+		.codeBlue
+			color: $codeBlue
+			display: inline
+		.codeOrange
+			color: $codeOrange
+			display: inline
+
+.tab
+	margin-left: 1em
+.tab2
+	margin-left: 2em
+.tab3
+	margin-left: 3em
+
+/* Code Formatting */
+
+/* Article Setup */
+
+.article
+	width: 800px
+	margin: 0 auto
+	article
+		padding-top: 10px
+
+/* Article Setup */
+
+/* Special Case */
+
+.smallImg
+	img
+		display: block
+		height: 150px
+		width: auto
+
+.noLink
+	text-decoration: none
+	color: black
+
+.ajaxDiv
+	width: 33%
+	margin: 0 auto
+	li
+		padding-bottom: 10px
+
+.ajaxLink
+	background: #FD6824
+	h1
+		color: black
+	&:hover
+		background: #BF0228
+		h1
+			color: $bgColor
+
+.sublimeFix
+	padding-bottom: 75px
+
+/* End Special Case */
+
+/* Lists */
+
+.infoList
+	padding: 5px
+	li
+		padding-bottom: 3px
+
+/* End Lists */

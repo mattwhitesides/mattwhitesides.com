@@ -1,0 +1,31 @@
+<h1 class="centerText">For Mac Users this is probably your best bet (granted I haven't tried a lot)</h1>	
+<br>
+<ol>
+	<li>Download Sublime Text through the icon above or click here <a href="http://www.sublimetext.com/3">here</a></li>
+	<li>Firest you will need somthing called "Package Control" it's a Sublime Plugin you can get it <a href="https://sublime.wbond.net/installation">here</a></li>
+	<li>To install Package Control select your version of Sublime Text (if you got it from the link on step 1 it is Sublime Text 3)</li>
+	<li>Copy the code from the website in the center box (just select it and copy to the clipboard)</li>
+	<li>Open Sublime Text and go to the top toolbar to "View" and then "Show Console" (View -> Show Console)</li>
+	<li>In the console that appears at the bottom of the editor paste the code you copied earlier and hit enter</li>
+	<li>This should automaticly install the Manager to sublime</li>
+	<li>Now to open the manager hit "ctrl+shift+p" on Windows or "cmd+shift+p" on Mac</li>
+	<li>A new window should pop up in that start typeing "install package" after a few letters only one option should be left, hit enter. (Search for: "install package" -> Enter)</li>
+	<li>Wait a second for a new window to load and this time search for "SFTP" multiple options will be available but hit enter to select the first one (Search for: "SFTP" -> Enter)</li>
+	<li>After it's done installing (status will be at the bottom if it goes away its done) restart Sublime Text</li>
+	<li>Now go to "File" then "SFTP/FTP" then "Setup Server" (File -> SFTP/FTP -> Setup Server)</li>
+	<li>A new untitled file should open up with a bunch of commented stuff</li>
+	<li>Make Sure "type": "sftp"</li>
+	<li>Change "host": "example.com", to "host": "babbage.cs.missouri.edu", (Note: don't delete any commas)</li>
+	<li>Change "user": "username", to "user": "yourPawprint",</li>
+	<li>Change //"password": "password", to "password": "yourPassword", (note uncomment thease lines you change leave the rest commented)</li>
+	<li>Change //"port": "22", to "port": "22", (just uncomment it)</li>
+	<li>Change "remote_path": "/example/path/", to "remote_path": "/students/4/yourPawprint/",</li>
+	<li>Save the file naming it whatever you want (Ex: Babbage or Mizzou or whatever)</li>
+	<li>Now you should be able to Go to "File" then "SFTP/FTP" then "Browse Server..." or a dumb shortcut on Mac "CMD" + "control" + "r" then let go of "r" and press "b"</li>
+	<li>A new window should pop up Select your name you gave the file</li>
+	<li>Now you should see your Directories that you can edit, save, delete .. ect to (a simple save to any file on the server will auto upload)</li>
+</ol>
+<br>
+<h1 class="centerText">This is definately a little more complex than notepad++'s setup</h1>
+<br>
+<h1 class="centerText">Note: you can't really get a full directory view you need to go back to brose server everytime you want to get another file</h1>

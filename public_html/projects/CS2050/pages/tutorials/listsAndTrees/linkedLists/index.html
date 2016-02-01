@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../../../../static/stylesheets/css/main.css">
+    <script src="../../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+    <script src="../../../../static/javascript/js/main.js" ></script>
+  </head>
+  <body>
+    <div id="navBar">
+      <ul class="center">
+        <a href="../../../../"><li>Home</li></a>
+        <a href="../../../tutorials/"><li>Tutorials</li></a>
+        <a href="../../../labs/"><li>Labs</li></a>
+        <a href="../../../info/"><li>Info</li></a>
+      </ul>
+    </div>
+
+    <h1 class="centerText navPadding">Linked Lists</h1>
+
+    <div class="article">
+      <h2>Recap of Arrays</h2>
+      <hr>
+      <article>
+        Recall arrays are always of a fixed size, you declare them and then access them by their index. This is fast and efficient to get an array if you have have static data of a fixed size.
+        Unforunately there are some problems, while you can add to an array through weird means it's not normally what they are used for.
+        This causes people to define arrays bigger than they actually need to anticipate there memory usage, this either ends in wasting memory or segfaulting when you run out.
+        Also seemengly simple operations on arrays become big tasks like if you wanted to delete an element from an array.
+        Sounds simple right but there is no real way to do so without makeing a copy of the entire thing and filling in a new one omitting the item in question, not efficint for a large array.
+        Or prehaps you wanted to put in an item at the begining of the array pushing all the rest of the elements back a spot?
+        Again hard and requires copying of large chunks of info.
+      </article>
+      <br>
+      <h2>Linked Lists</h2>
+      <hr>
+      <article>
+        In almost every way where arrays are weak linked lists are strong and vice versa.
+        <ul class="infoList">
+          <li>Linked lists are dynamically allocated only makeing a new element when needed, and have simple operations for functions like pushing, poping and deleting elements.
+          <li>Just by changing one pointer in a linked list, complex array operations can be preformed.
+          <li>But it does have downsides, if you know the location of an element the access time for a simple linked lists is O(n) insead of O(1).
+          <li>If you explicitly said x[n] that would be an O(1) operation for an array but for a linked list it would have to iterate n times making it O(n).
+          <li>Also because of their dynamic nature the designer has to free and allocate the new memory themselves.
+        </ul>
+      </article>
+      <br>
+      <h2 class="centerText">How do we define a linked list?</h2>
+      <br>
+      <br>
+      <div class="code2">
+        <h1>typedef struct node {</h1>
+          <h1 class="tab">struct node* next;</h1>
+        <h1>} node;</h1>
+      </div>
+      <br>
+      <article>
+        And it's as simple as that. All a liked list is, is a series of nodes connected by a pointer to the next one in the list.
+        But obviously we probably want some data in there so let's define some stuff.
+      </article>
+      <br>
+      <div class="code2">
+        <h1>typedef struct node {</h1>
+          <h1 class="tab">char name[20];</h1>
+          <h1 class="tab">int age;</h1>
+          <h1 class="tab">struct node* next;</h1>
+        <h1>} node;</h1>
+      </div>
+      <br>
+      <h2 class="centerText">How do we create linked list?</h2>
+      <br>
+      <article>
+        The idea behind linked lists is that you never directly have access to the whole thing at one time. What you do keep constant track of is top or head of the list.
+        If you lose this pointer to the head of the list the entire list is gone, so usually the head is stored in main and pass around or minipulated.
+      </article>
+      <br>
+      <h3 class="centerText">A NULL list is just and empty linked list.</h3>
+      <h3 class="centerText">So to create a new linked list just initialize a new node pointer to NULL.</h3>
+      <br>
+      <div class="code2">
+        <h1>node* head = NULL;</h1>
+      </div>
+      <br>
+      <article>
+        Now everything will be added to this new head pointer.
+        Note you do need to initialize the head to NULL just like variables because it will explicitly give all pointers a ligit memory location but is one that has not memory so it will be a segfalut.
+      </article>
+      <br>
+      <h2 class="centerText">How do we insert into a linked list?</h2>
+      <br>
+      <article>
+        Inserting new nodes is simple, just allocate the memory needed for your node struct, set your data, and set the next pointer to the current head.
+        <ul class="infoList">
+          <li>Allocate the memory needed for a new node struct.
+          <li>Set your new data into this struct
+          <li>Set the pointer of the newly created node to the head of the list.
+        </ul>
+        This is why it is much easier to insert nodes at the begining of a list rather than the end because you always start at the head.
+        This is known as a "Push" because your new node pushed every other node back a space.
+      </article>
+      <br>
+      <h2 class="centerText">How do we iterate through linked list?</h2>
+      <br>
+    </div>
+  </body>
+</html>

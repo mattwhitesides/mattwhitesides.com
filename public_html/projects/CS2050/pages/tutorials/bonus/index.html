@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../../../static/stylesheets/css/main.css">
+    <script src="../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+    <script src="../../../static/javascript/js/main.js" ></script>
+  </head>
+  <body>
+    <div id="navBar">
+      <ul class="center">
+        <a href="../../../"><li>Home</li></a>
+        <a href="../../tutorials/"><li>Tutorials</li></a>
+        <a href="../../labs/"><li>Labs</li></a>
+        <a href="../../info/"><li>Info</li></a>
+      </ul>
+    </div>
+
+    <h1 class="centerText navPadding">Bonus challanges and Interview questions</h1>
+
+    <div class="article">
+      <h2>Recursively reverse a linked list in O(n) time and O(1) memory.</h2>
+      <h2>(O(n) Depending on if you count recursive stack in the equation)</h2>
+      <hr>
+      <article>
+        Let's start off whith what is O(n) time and O(1) memory.
+        O(n) time means it will only take the n number of iterations to complete the task for example if the list is of length 5 then only five actions will take place.
+        O(1) memory means that no more structers need to be created to accomplish this task you are only using what memory you have and rearranging the pointers.
+        Making new pointers is acceptable though.
+      </article>
+      <br>
+      <h2 class="centerText">Lets get started!</h2>
+      <h2 class="centerText">Like all recursive functions we need to start with a base case(s).</h2>
+      <br>
+      <article>
+        The simplest case we will have is checking for NULL, simply states we have passed in an empty list so we should return NULL.
+      </article>
+      <div class="code2">
+        <h1>if (list == NULL) return NULL;</h1>
+      </div>
+      <br>
+      <article>
+        A kind of odd thing about this problem is that we need a second case for checking if we are at the last node before NULL.
+        This is because we still want NULL to be at the end of the list and the rest be reversed.
+      </article>
+      <div class="code2">
+        <h1>if (list->next == NULL) return list;</h1>
+      </div>
+      <br>
+      <h2 class="centerText">So now we will store our old pointer and call recursion on our new.</h2>
+      <article>
+        The basic idea here is that we want to take the list and reverse the 'next' pointers to point the other way, but the trickey part is we need to manage the orinal list.
+        The recursive part will go down to the base case at the end of the list and work it's way back up, changing the pointers as it goes.
+        The key here is that we will store the old value of next before we call the recursive part so it's still in our stack when the recursion is working its way back up.
+      </article>
+      <div class="code2">
+        <h1>node* next = list->next;</h1>
+        <h1>node* rev  = reverse_list(list->next);</h1>
+      </div>
+      <br>
+      <h2 class="centerText">Finally we will actually change our pointer and handle the end of our new list.</h2>
+      <article>
+        Here we are setting the next->next which is accesing our next pointers ... next pointer and pointer it backwards.
+        Finally we will return our reversed list's head.
+      </article>
+      <div class="code2">
+        <h1>next->next = list;</h1></h1>
+        <h1>list->next = NULL;</h1></h1>
+        <br>
+        <h1>return rev;</h1>
+      </div>
+      <br>
+      <h2 class="centerText">Here is the final function</h2>
+      <br>
+      <div class="code2">
+        <h1>node* reverse_list(node* list) {</h1>
+            <h1 class="tab">if (list == NULL) return NULL;</h1>
+            <br>
+            <h1 class="tab">if (list->next == NULL) return list;</h1>
+            <br>
+            <h1 class="tab">node* next = list->next;</h1>
+            <h1 class="tab">node* rev  = reverse_list(list->next);</h1>
+            <br>
+            <h1 class="tab">next->next = list;</h1>
+            <h1 class="tab">list->next = NULL;</h1>
+            <br>
+            <h1 class="tab">return rev;</h1>
+        <h1>}</h1>
+      </div>
+    </div>
+  </body>
+</html>

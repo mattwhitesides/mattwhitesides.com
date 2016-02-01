@@ -1,0 +1,80 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../../../static/stylesheets/css/main.css">
+  <script src="../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+  <script src="../../../static/javascript/js/main.js" ></script>
+</head>
+<body>
+  <div id="navBar">
+    <ul class="center">
+      <a href="../../../"><li>Home</li></a>
+      <a href="../../tutorials/"><li>Tutorials</li></a>
+      <a href="../../labs/"><li>Labs</li></a>
+      <a href="../../info/"><li>Info</li></a>
+    </ul>
+  </div>
+
+  <h1 class="centerText navPadding">Commenting Practices and General Coding Style</h1>
+  <br>
+  <h2 class="centerText">Making comments is not suppose to be busy work. Comments usually serve a functional purpose.</h2>
+  <br>
+  <h2 class="centerText">Lets look at some professional examples of commenting</h2>
+  <br><br><br>
+  <h1 class="centerText">Id Software: Quake III (Full source code <a href="https://github.com/id-Software/Quake-III-Arena/">github.com/id-Software/Quake-III-Arena/</a>)</h1>
+  <br>
+  <div id="forceCodeLarge" class="center">
+    <h1><div class="codeBlue">/*</div></h1>
+    <h1><div class="codeBlue">==============</div></h1>
+    <h1><div class="codeBlue">BotUpdateInput</div></h1>
+    <h1><div class="codeBlue">==============</div></h1>
+    <h1><div class="codeBlue">*/</div></h1>
+    <h1>void BotUpdateInput(bot_state_t *bs, int time, int elapsed_time) {</h1>
+      <h1 class="tab">bot_input_t bi;</h1>
+      <h1 class="tab">int j;</h1>
+      <br>
+      <h1 class="tab"><div class="codeBlue">//add the delta angles to the bot's current view angles</h1>
+      <h1 class="tab">for (j = 0; j < 3; j++) {</h1>
+        <h1 class="tab2">bs->viewangles[j] = AngleMod(bs->viewangles[j] + SHORT2ANGLE(bs->cur_ps.delta_angles[j]));</h1>
+        <h1 class="tab">}</h1>
+        <h1 class="tab"><div class="codeBlue">//change the bot view angles</div></h1>
+        <h1 class="tab">BotChangeViewAngles(bs, (float) elapsed_time / 1000);</h1>
+        <h1 class="tab"><div class="codeBlue">//retrieve the bot input</div></h1>
+        <h1 class="tab">trap_EA_GetInput(bs->client, (float) time / 1000, &bi);</h1>
+        <h1 class="tab"><div class="codeBlue">//respawn hack</div></h1>
+        <h1 class="tab">if (bi.actionflags & ACTION_RESPAWN) {</h1>
+          <h1 class="tab2">if (bs->lastucmd.buttons & BUTTON_ATTACK) bi.actionflags &= ~(ACTION_RESPAWN|ACTION_ATTACK);</h1>
+          <h1 class="tab">}</h1>
+          <h1 class="tab"><div class="codeBlue">//convert the bot input to a usercmd</div></h1>
+          <h1 class="tab">BotInputToUserCommand(&bi, &bs->lastucmd, bs->cur_ps.delta_angles, time);</h1>
+          <h1 class="tab"><div class="codeBlue">//subtract the delta angles</div></h1>
+          <h1 class="tab">for (j = 0; j < 3; j++) {</h1>
+            <h1 class="tab2">bs->viewangles[j] = AngleMod(bs->viewangles[j] - SHORT2ANGLE(bs->cur_ps.delta_angles[j]));</h1>
+            <h1 class="tab">}</h1>
+            <h1>}</h1>
+          </div>
+          <br><br>
+    <h1 class="centerText">Google: An HTML 5 parser (Full source code <a href="https://github.com/google/gumbo-parser">https://github.com/google/gumbo-parser</a>)</h1>
+    <br>
+    <div id="forceCodeLarge" class="center">
+    <h1><div class="codeBlue">// Returns true if the given needle is in the given array of literal</div></h1>
+    <h1><div class="codeBlue">// GumboStringPieces.  If exact_match is true, this requires that they match</div></h1>
+    <h1><div class="codeBlue">// exactly; otherwise, this performs a prefix match to check if any of the</div></h1>
+    <h1><div class="codeBlue">// elements in haystack start with needle.  This always performs a</div></h1>
+    <h1><div class="codeBlue">// case-insensitive match.</div></h1>
+    <h1>static bool is_in_static_list(</h1>
+    <h1>const char* needle, const GumboStringPiece* haystack, bool exact_match) {</h1>
+    <h1 class="tab">for (int i = 0; haystack[i].length > 0; ++i) {</h1>
+      <h1 class="tab2">if ((exact_match && !strcmp(needle, haystack[i].data)) ||</h1>
+      <h1 class="tab2">(!exact_match && !strcasecmp(needle, haystack[i].data))) {</h1>
+        <h1 class="tab3">return true;</h1>
+        <h1 class="tab2">}</h1>
+        <h1 class="tab">}</h1>
+        <h1 class="tab">return false;</h1>
+        <h1>}</h1>
+    </div>
+    <h1 class="topPadding centerText">Note that both of these examples are not describing every detail but the overall logic of the code.</h1>
+    <h1 class="centerText">They serve a purpose of describing what the function does without needing to how.</h1>
+    <h1 class="centerText">They also help you think through the expected input and output of the function.</h1>
+    <h1 class="centerText">You should be able to write almost all your comments before you write any code.</h1>
+</body>
+</html>

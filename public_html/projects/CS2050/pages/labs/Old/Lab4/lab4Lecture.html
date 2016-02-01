@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../../static/stylesheets/css/main.css">
+		<script src="../../../static/javascript/js/jquery-2.1.1.min.js" ></script>
+		<script src="../../../static/javascript/js/main.js" ></script>
+	</head>	
+	<body class="lab4Theme">
+		<div id="navBar">
+			<ul class="center">
+				<a href="../../../"><li>Home</li></a>
+				<a href="../../tutorials/"><li>Tutorials</li></a>
+				<a href="../../labs/"><li>Labs</li></a>
+				<a href="../../info/"><li>Info</li></a>
+			</ul>
+		</div>
+
+		<h1 class="centerText navPadding">Lab 4 Notes</h1>
+
+		<h2 class="centerText bottomPadding">Big thing this week will be merge sort, a totally rad tutorial is located <a href="../../tutorials/sorting/">here</a></h2>
+		
+		<h2 class="centerText">Note from last lab:</h2>
+		<br>
+		<h2 class="centerText">The example I gave for file IO was a bit ambigious on how to handle the eof.</h2>
+		<h2 class="centerText">Depending on how you end your files you would have to account for that.</h2>
+		<br>
+		<h2 class="centerText">You could add to that last example to make it more fool proof or try this method</h2>
+		<div id="forceCode2" class="center">
+			<h1>int i = 0;</h1>
+			<br>
+			<h1>while (fscanf(file, "%d", &array[i]) != EOF) {</h1>
+				<h1 class="tab">++i;</h1>
+			<h1>}</h1>
+		</div>
+		<br>
+		<br>
+		<h2 class="centerText">But in reality thats not the best solution either as its relying on a failure and doesnt account for errors in the file</h2>
+		<h2 class="centerText">A "better" alternative to fscanf is fgets, fcanf would idealy only be used if you knew 100% going in exactly what the file would be.</h2>
+		<div id="forceCode2" class="center">
+			<h1>char data[80];<h1>
+			<h1>while (!feof(file)) {</h1>
+				<h1 class="tab">fgets(data, 60, file);</h1>
+				<h1 class="tab">array[i] = atoi(data);</h1>
+				<h1 class="tab">++i;</h1>
+			<h1>}</h1>
+		</div>
+		<h2 class="centerText">You will definately want to fully understand fgets before using it though.</h2>
+		<h2 class="centerText">Fgets gives back the raw character data read in from the file it's up to you to pase and deal with it.</h2>
+		<h2 class="centerText">note the atoi() function call this converts the data from character array to an int.</h2>		
+		<br>
+		<h2 class="centerText">Chose whever style you would like but definatly know the pros and cons of what you chose.</h2>
+		<br>
+		<br>
+		<h2 class="centerText">Now somthing differnt...</h2>
+		<br>
+		<h1 class="centerText">Commenting Practices and General Coding Style</h1>				
+		<br>
+		<h2 class="centerText">Making comments is not suppose to be busy work. Comments usually serve a functional purpose.</h2>
+		<br>
+		<h2 class="centerText">Lets look at some professional examples of commenting</h2>		
+		<br><br><br>
+		<h1 class="centerText">Id Software: Quake III (Full source code <a href="https://github.com/id-Software/Quake-III-Arena/">github.com/id-Software/Quake-III-Arena/</a>)</h1>
+		<br>
+		<div id="forceCodeLarge" class="center">
+			<h1><div class="codeBlue">/*</div></h1>
+			<h1><div class="codeBlue">==============</div></h1>
+			<h1><div class="codeBlue">BotUpdateInput</div></h1>
+			<h1><div class="codeBlue">==============</div></h1>
+			<h1><div class="codeBlue">*/</div></h1>
+			<h1>void BotUpdateInput(bot_state_t *bs, int time, int elapsed_time) {</h1>
+				<h1 class="tab">bot_input_t bi;</h1>
+				<h1 class="tab">int j;</h1>
+				<br>
+				<h1 class="tab"><div class="codeBlue">//add the delta angles to the bot's current view angles</h1>
+				<h1 class="tab">for (j = 0; j < 3; j++) {</h1>
+					<h1 class="tab2">bs->viewangles[j] = AngleMod(bs->viewangles[j] + SHORT2ANGLE(bs->cur_ps.delta_angles[j]));</h1>
+				<h1 class="tab">}</h1>
+				<h1 class="tab"><div class="codeBlue">//change the bot view angles</div></h1>
+				<h1 class="tab">BotChangeViewAngles(bs, (float) elapsed_time / 1000);</h1>
+				<h1 class="tab"><div class="codeBlue">//retrieve the bot input</div></h1>
+				<h1 class="tab">trap_EA_GetInput(bs->client, (float) time / 1000, &bi);</h1>
+				<h1 class="tab"><div class="codeBlue">//respawn hack</div></h1>
+				<h1 class="tab">if (bi.actionflags & ACTION_RESPAWN) {</h1>
+					<h1 class="tab2">if (bs->lastucmd.buttons & BUTTON_ATTACK) bi.actionflags &= ~(ACTION_RESPAWN|ACTION_ATTACK);</h1>
+				<h1 class="tab">}</h1>
+				<h1 class="tab"><div class="codeBlue">//convert the bot input to a usercmd</div></h1>
+				<h1 class="tab">BotInputToUserCommand(&bi, &bs->lastucmd, bs->cur_ps.delta_angles, time);</h1>
+				<h1 class="tab"><div class="codeBlue">//subtract the delta angles</div></h1>
+				<h1 class="tab">for (j = 0; j < 3; j++) {</h1>
+					<h1 class="tab2">bs->viewangles[j] = AngleMod(bs->viewangles[j] - SHORT2ANGLE(bs->cur_ps.delta_angles[j]));</h1>
+				<h1 class="tab">}</h1>
+			<h1>}</h1>	
+		</div>
+		<br><br>
+		<h1 class="centerText">Google: An HTML 5 parser (Full source code <a href="https://github.com/google/gumbo-parser">https://github.com/google/gumbo-parser</a>)</h1>
+		<br>
+		<div id="forceCodeLarge" class="center">
+			<h1><div class="codeBlue">// Returns true if the given needle is in the given array of literal</div></h1>
+			<h1><div class="codeBlue">// GumboStringPieces.  If exact_match is true, this requires that they match</div></h1>
+			<h1><div class="codeBlue">// exactly; otherwise, this performs a prefix match to check if any of the</div></h1>
+			<h1><div class="codeBlue">// elements in haystack start with needle.  This always performs a</div></h1>
+			<h1><div class="codeBlue">// case-insensitive match.</div></h1>
+			<h1>static bool is_in_static_list(</h1>
+			    <h1>const char* needle, const GumboStringPiece* haystack, bool exact_match) {</h1>
+			  <h1 class="tab">for (int i = 0; haystack[i].length > 0; ++i) {</h1>
+			    <h1 class="tab2">if ((exact_match && !strcmp(needle, haystack[i].data)) ||</h1>
+			        <h1 class="tab2">(!exact_match && !strcasecmp(needle, haystack[i].data))) {</h1>
+			      <h1 class="tab3">return true;</h1>
+			    <h1 class="tab2">}</h1>
+			  <h1 class="tab">}</h1>
+			  <h1 class="tab">return false;</h1>
+			<h1>}</h1>
+		</div>
+
+	</body>
+</html>
