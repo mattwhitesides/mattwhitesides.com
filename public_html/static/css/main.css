@@ -1,18 +1,24 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600");
+
 body {
-  background-color: #F2E5C5; }
+  background-color: #F2E5C5;
+}
 
 h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 50px;
-  display: inline; }
+  display: inline;
+}
 
 h3, h2, h4, a {
   font-family: "Open Sans", sans-serif;
-  color: #EF6245; }
-  h3 h2, h2 h2, h4 h2, a h2 {
-    font-size: 50px; }
+  color: #EF6245;
+}
+
+h3 h2, h2 h2, h4 h2, a h2 {
+  font-size: 50px;
+}
 
 .twoColor {
   background: #F2E5C5;
@@ -22,39 +28,60 @@ h3, h2, h4, a {
   background: -o-linear-gradient(left, #F2E5C5 0%, #F2E5C5 50%, #EF6245 50%, #EF6245 100%);
   background: -ms-linear-gradient(left, #F2E5C5 0%, #F2E5C5 50%, #EF6245 50%, #EF6245 100%);
   background: linear-gradient(to right, #F2E5C5 0%, #F2E5C5 50%, #EF6245 50%, #EF6245 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$right', endColorstr='$left',GradientType=1 ); }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$right', endColorstr='$left', GradientType=1);
+}
 
 .orange {
   color: #EF6245;
-  margin-left: -127px; }
-  .orange a {
-    color: #EF6245;
-    display: inline-block; }
+  margin-left: -127px;
+}
+
+.orange a {
+  color: #EF6245;
+  display: inline-block;
+}
 
 .white {
   color: #F2E5C5;
-  margin-left: 15px; }
-  .white a {
-    color: #F2E5C5;
-    display: inline-block; }
+  margin-left: 15px;
+}
+
+.white a {
+  color: #F2E5C5;
+  display: inline-block;
+}
 
 #first {
-  margin-left: -270px; }
+  margin-left: -270px;
+}
 
 #third {
-  margin-left: -285px; }
+  margin-left: -285px;
+}
 
 #fifth {
-  margin-left: -255px; }
+  margin-left: -255px;
+}
+
+#sixth {
+  margin-left: -295px;
+}
 
 #noStyle {
-  margin-left: 0px; }
+  margin-left: 0px;
+}
+
+#marginStyle {
+  margin-left: 20px;
+}
 
 .textCenter {
-  text-align: center; }
+  text-align: center;
+}
 
 .textLeft {
-  text-align: left; }
+  text-align: left;
+}
 
 .center {
   position: absolute;
@@ -62,12 +89,15 @@ h3, h2, h4, a {
   height: 345px;
   top: 50%;
   left: 50%;
-  margin-top: -172px; }
+  margin-top: -172px;
+}
 
 .centerStuff {
-  left: 50%; }
+  left: 50%;
+}
 
 .topPadding {
-  margin-top: 20px; }
+  margin-top: 20px;
+}
 
 /*# sourceMappingURL=main.css.map */
