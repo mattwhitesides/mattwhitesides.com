@@ -20,6 +20,10 @@ h3 h2, h2 h2, h4 h2, a h2 {
   font-size: 50px;
 }
 
+.back span:hover {
+  font-weight:bold;
+}
+
 .twoColor {
   background: #F2E5C5;
   background: -moz-linear-gradient(left, #F2E5C5 0%, #F2E5C5 50%, #EF6245 50%, #EF6245 100%);
